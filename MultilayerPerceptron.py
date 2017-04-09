@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import tensorflow as tf
 import sonnet as snt 
-
+import numpy as np 
 #------------------------------------------------------------------------------------------------------------------------------#
 """Flags are a TensorFlow internal util to define command-line parameters."""
 flags = tf.app.flags
@@ -28,7 +28,7 @@ flags.DEFINE_float("hidden_size", 50, "output size for linear model")
 flags.DEFINE_float("output_size", 25, "output size for hidden layer")
 #------------------------------------------------------------------------------------------------------------------------------#
 
-train_data =
+train_data = tf.convert_to_tensor(np.matrix[[1,2],[3,4]], np.int32)
 test_data =
 
 linear_to_hidden = snt.Linear(output_size = 50 , name ='inp_to_hidden')

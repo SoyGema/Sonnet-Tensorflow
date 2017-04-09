@@ -6,29 +6,9 @@ import tensorflow as tf
 import sonnet as snt 
 import numpy as np 
 #------------------------------------------------------------------------------------------------------------------------------#
-"""Flags are a TensorFlow internal util to define command-line parameters."""
-flags = tf.app.flags
-FLAGS = flags.FLAGS
-
-flags.DEFINE_string("model_dir", "", "Base directory for output models.")
-flags.DEFINE_string("model_type", "wide_n_deep",
-                    "Valid model types: {'hidden_size', 'output_size'}.")
-flags.DEFINE_integer("train_steps", 200, "Number of training steps.")
-
-flags.DEFINE_string(
-    "train_data",
-    "",
-    "Path to the training data.")
-flags.DEFINE_string(
-    "test_data",
-    "",
-    "Path to the test data.")
-
-flags.DEFINE_float("hidden_size", 50, "output size for linear model")
-flags.DEFINE_float("output_size", 25, "output size for hidden layer")
 #------------------------------------------------------------------------------------------------------------------------------#
 
-train_data = tf.convert_to_tensor(np.matrix[[1,2],[3,4]], np.int32)
+train_data = tf.convert_to_tensor(np.matrix[[1,2],[3,4]], dtype=np.int32)
 test_data =
 
 linear_to_hidden = snt.Linear(output_size = 50 , name ='inp_to_hidden')

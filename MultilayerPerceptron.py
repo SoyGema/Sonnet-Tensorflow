@@ -11,8 +11,8 @@ import numpy as np
 train_data = tf.convert_to_tensor(np.matrix[[1.0,2.0],[3.0,4.0]], dtype=np.float32)
 test_data = tf.convert_to_tensor(np.matrix[[5.0,6.0],[8.0,9.0]], dtype=np.float32)
 
-linear_to_hidden = snt.Linear(output_size = 50 , name ='inp_to_hidden')
-hidden_to_out = snt.Linear(output_size = 25, name = 'hidden_to_out')
+linear_to_hidden = snt.Linear(output_size = 4, name ='inp_to_hidden')
+hidden_to_out = snt.Linear(output_size = 2, name = 'hidden_to_out')
 
 #Sequential is a module wich applies a number of inner ops in sequence to data 
 #We can put another activation function like tf.tahn or tf.nn.relu 
